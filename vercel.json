@@ -2,6 +2,6 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
-    { "source": "/go/:cta", "destination": "/go.html" }
+    { "source": "/go/:cta", "destination": "/go" }
   ]
 }
