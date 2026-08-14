@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>Abrindo checkout seguro...</title>
+    <style>
+      body{margin:0;min-height:100vh;display:grid;place-items:center;background:#fbf6ea;color:#304728;font:600 16px system-ui,sans-serif;text-align:center}.box{padding:28px}.spin{width:34px;height:34px;margin:0 auto 16px;border:4px solid #dfe6d1;border-top-color:#c96f4a;border-radius:50%;animation:s .8s linear infinite}@keyframes s{to{transform:rotate(360deg)}}small{display:block;margin-top:8px;color:#697166;font-weight:400}
+    </style>
+    <script defer src="/_vercel/insights/script.js"></script>
+  </head>
+  <body>
+    <div class="box"><div class="spin"></div>Abrindo o checkout seguro...<small>Você será direcionado para a Kiwify.</small></div>
+    <script>
+      (function(){
+        var source=(location.pathname.split('/').filter(Boolean).pop()||'desconhecido').replace(/[^a-z0-9_-]/gi,'');
+        var incoming=new URLSearchParams(location.search);
+        var checkout=new URL('https://pay.kiwify.com.br/tP119DO');
+        ['utm_source','utm_medium','utm_campaign','utm_term'].forEach(function(key){if(incoming.get(key)) checkout.searchParams.set(key,incoming.get(key));});
+        checkout.searchParams.set('utm_content',source);
+        setTimeout(function(){location.replace(checkout.toString());},550);
+      })();
+    </script>
+  </body>
+</html>
